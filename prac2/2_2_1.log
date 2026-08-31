@@ -1,0 +1,1438 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2026.05.04 18:10:27 =~=~=~=~=~=~=~=~=~=~=~=
+login as: eltex-pg1-v13
+Server refused our key
+eltex-pg1-v13@217.71.138.1's password: 
+Linux eltex-2026-spring 6.1.0-44-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.164-1 (2026-03-09) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Sun May  3 23:55:16 2026 from 104.28.244.74
+eltex-pg1-v13@eltex-2026-spring-18:10>tailssh 217.root@172.16.9.187
+Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 6.8.0-110-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon May  4 11:12:07 AM UTC 2026
+
+  System load:  0.08               Processes:              112
+  Usage of /:   42.6% of 14.66GB   Users logged in:        0
+  Memory usage: 6%                 IPv4 address for ens18: 172.16.9.187
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+96 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+1 additional security update can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+
+bakuk aleksandr
+Last login: Sun May  3 17:07:56 2026 from 172.16.8.4
+root@eltex-practice2-pg1-v13:~# tail /etc/passwd
+tcpdump:x:105:107::/nonexistent:/usr/sbin/nologin
+tss:x:106:108:TPM software stack,,,:/var/lib/tpm:/bin/false
+landscape:x:107:109::/var/lib/landscape:/usr/sbin/nologin
+fwupd-refresh:x:989:989:Firmware update daemon:/var/lib/fwupd:/usr/sbin/nologin
+usbmux:x:108:46:usbmux daemon,,,:/var/lib/usbmux:/usr/sbin/nologin
+sshd:x:109:65534::/run/sshd:/usr/sbin/nologin
+tech:x:1000:1000:tech:/home/tech:/bin/bash
+user1:x:1004:1005::/home/user1:/bin/bash
+user2:x:1001:1001:,,,:/home/user2:/bin/bash
+user3:x:1002:1002:,,,:/home/user3:/usr/sbin/nologin
+root@eltex-practice2-pg1-v13:~# cattail /etc/passwd | awk -  -F "";"":"  /etc/passwd /etc/passwd /etc/passwd /etc/passwd /etc/passwd /etc/passwd /etc/passwd /etc/passwd /etc/passwd /etc/passwd /etc/passwd /etc/passwdh /etc/passwde /etc/passwda /etc/passwdd /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+root@eltex-practice2-pg1-v13:~# head /etc/passwd | awk -F ""^"":" ""p"r"i"n"t" "$"3"''{}'  ''/'/'/'u/'s/'r/'/'s/'b/'i/'n/'/'n/'o/'l/'o/'g/'i/'n/' {} {}'$}'7}'
+awk: cmd. line:1: //usr/sbin/nologin/ {$7}
+awk: cmd. line:1:                     ^ syntax error
+root@eltex-practice2-pg1-v13:~# head /etc/passwd | awk '//usr/sbin/nologin/ {$7}'p{$7}'r{$7}'i{$7}'n{$7}'t{$7}'$7}' $7}'{
+awk: cmd. line:1: //usr/sbin/nologin/ {print $7}
+awk: cmd. line:1:                     ^ syntax error
+root@eltex-practice2-pg1-v13:~# head /etc/passwd | awk '//usr/sbin/nologin/ {print $7}'
+awk: cmd. line:1: (FILENAME=- FNR=1) fatal: division by zero attempted
+root@eltex-practice2-pg1-v13:~# head /etc/passwd | awk '/usr/sbin/nologin {print $7}'//
+awk: cmd. line:1: //usr/sbin/nologin/ {print $7}
+awk: cmd. line:1:                     ^ syntax error
+root@eltex-practice2-pg1-v13:~# head /etc/passwd | awk '//usr/sbin/nologin/ {print $7}'}'3}'
+awk: cmd. line:1: //usr/sbin/nologin/ {print $3}
+awk: cmd. line:1:                     ^ syntax error
+root@eltex-practice2-pg1-v13:~# head /etc/passwd | awk '//usr/sbin/nologin/ {print $3}'}'7}'$7}' $7}'./root
+
+root@eltex-practice2-pg1-v13:~# head /etc/passwd | awk '/root/ {print $7}'}'3}'
+
+root@eltex-practice2-pg1-v13:~# head /etc/passwd | awk '/root/ {print $3}'}'1}'
+root:x:0:0:root:/root:/bin/bash
+root@eltex-practice2-pg1-v13:~# head /etc/passwd | awk '/root/ {print $1}'-F: t}'7}'
+/bin/bash
+root@eltex-practice2-pg1-v13:~# head /etc/passwd | awk -F: '/root/ {print $7}'/usr/sbin/nologin
+awk: cmd. line:1: //usr/sbin/nologin/ {print $7}
+awk: cmd. line:1:                     ^ syntax error
+root@eltex-practice2-pg1-v13:~# ^C
+root@eltex-practice2-pg1-v13:~# head /etc/passwd | awk -F: '//usr/sbin/nologin/ {print $7}'\\\
+/usr/sbin/nologin
+/usr/sbin/nologin
+/usr/sbin/nologin
+/usr/sbin/nologin
+/usr/sbin/nologin
+/usr/sbin/nologin
+/usr/sbin/nologin
+/usr/sbin/nologin
+root@eltex-practice2-pg1-v13:~# head /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $7}';$7}'3$7}'$7}'$7}'$7}'3$7}' $7}'$7}'1$7}' $7}'$7}'4$7}' $7}'
+1daemon1/usr/sbin/nologin
+2bin2/usr/sbin/nologin
+3sys3/usr/sbin/nologin
+5games60/usr/sbin/nologin
+6man12/usr/sbin/nologin
+7lp7/usr/sbin/nologin
+8mail8/usr/sbin/nologin
+9news9/usr/sbin/nologin
+root@eltex-practice2-pg1-v13:~# head /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $3 $1 $4 $7}'/t
+awk: cmd. line:1: (FILENAME=- FNR=2) fatal: division by zero attempted
+root@eltex-practice2-pg1-v13:~# head /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $3/t $1 $4 $7}'\
+awk: cmd. line:1: /\/usr\/sbin\/nologin/ {print $3\t $1 $4 $7}
+awk: cmd. line:1:                                 ^ backslash not last character on line
+root@eltex-practice2-pg1-v13:~# head /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $3\t $1 $4 $7}' 
+1daemon1/usr/sbin/nologin
+2bin2/usr/sbin/nologin
+3sys3/usr/sbin/nologin
+5games60/usr/sbin/nologin
+6man12/usr/sbin/nologin
+7lp7/usr/sbin/nologin
+8mail8/usr/sbin/nologin
+9news9/usr/sbin/nologin
+root@eltex-practice2-pg1-v13:~# ^C
+root@eltex-practice2-pg1-v13:~# head /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $3 $1 $4 $7}',
+1 daemon1/usr/sbin/nologin
+2 bin2/usr/sbin/nologin
+3 sys3/usr/sbin/nologin
+5 games60/usr/sbin/nologin
+6 man12/usr/sbin/nologin
+7 lp7/usr/sbin/nologin
+8 mail8/usr/sbin/nologin
+9 news9/usr/sbin/nologin
+root@eltex-practice2-pg1-v13:~# head /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $3, $1 $4 $7}',, $7}'
+1 daemon 1 /usr/sbin/nologin
+2 bin 2 /usr/sbin/nologin
+3 sys 3 /usr/sbin/nologin
+5 games 60 /usr/sbin/nologin
+6 man 12 /usr/sbin/nologin
+7 lp 7 /usr/sbin/nologin
+8 mail 8 /usr/sbin/nologin
+9 news 9 /usr/sbin/nologin
+root@eltex-practice2-pg1-v13:~# head /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $3, $1, $4, $7}'cat
+1 daemon 1 /usr/sbin/nologin
+2 bin 2 /usr/sbin/nologin
+3 sys 3 /usr/sbin/nologin
+5 games 60 /usr/sbin/nologin
+6 man 12 /usr/sbin/nologin
+7 lp 7 /usr/sbin/nologin
+8 mail 8 /usr/sbin/nologin
+9 news 9 /usr/sbin/nologin
+10 uucp 10 /usr/sbin/nologin
+13 proxy 13 /usr/sbin/nologin
+33 www-data 33 /usr/sbin/nologin
+34 backup 34 /usr/sbin/nologin
+38 list 38 /usr/sbin/nologin
+39 irc 39 /usr/sbin/nologin
+42 _apt 65534 /usr/sbin/nologin
+65534 nobody 65534 /usr/sbin/nologin
+998 systemd-network 998 /usr/sbin/nologin
+997 systemd-timesync 997 /usr/sbin/nologin
+101 messagebus 102 /usr/sbin/nologin
+992 systemd-resolve 992 /usr/sbin/nologin
+991 polkitd 991 /usr/sbin/nologin
+103 syslog 104 /usr/sbin/nologin
+104 uuidd 105 /usr/sbin/nologin
+105 tcpdump 107 /usr/sbin/nologin
+107 landscape 109 /usr/sbin/nologin
+989 fwupd-refresh 989 /usr/sbin/nologin
+108 usbmux 46 /usr/sbin/nologin
+109 sshd 65534 /usr/sbin/nologin
+1002 user3 1002 /usr/sbin/nologin
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $3, $1, $4, $7}'}'}'}'}'
+1 daemon 1
+2 bin 2
+3 sys 3
+5 games 60
+6 man 12
+7 lp 7
+8 mail 8
+9 news 9
+10 uucp 10
+13 proxy 13
+33 www-data 33
+34 backup 34
+38 list 38
+39 irc 39
+42 _apt 65534
+65534 nobody 65534
+998 systemd-network 998
+997 systemd-timesync 997
+101 messagebus 102
+992 systemd-resolve 992
+991 polkitd 991
+103 syslog 104
+104 uuidd 105
+105 tcpdump 107
+107 landscape 109
+989 fwupd-refresh 989
+108 usbmux 46
+109 sshd 65534
+1002 user3 1002
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $3, $1, $4}' | sort -k1r
+9 news 9
+998 systemd-network 998
+997 systemd-timesync 997
+992 systemd-resolve 992
+991 polkitd 991
+989 fwupd-refresh 989
+8 mail 8
+7 lp 7
+6 man 12
+65534 nobody 65534
+5 games 60
+42 _apt 65534
+3 sys 3
+39 irc 39
+38 list 38
+34 backup 34
+33 www-data 33
+2 bin 2
+1 daemon 1
+13 proxy 13
+10 uucp 10
+109 sshd 65534
+108 usbmux 46
+107 landscape 109
+105 tcpdump 107
+104 uuidd 105
+103 syslog 104
+101 messagebus 102
+1002 user3 1002
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $3, $1, $4}' | sort -k1rawk -F 
+Usage: awk [POSIX or GNU style options] -f progfile [--] file ...
+Usage: awk [POSIX or GNU style options] [--] 'program' file ...
+POSIX options:GNU long options: (standard)
+-f progfile--file=progfile
+-F fs--field-separator=fs
+-v var=val--assign=var=val
+Short options:GNU long options: (extensions)
+-b--characters-as-bytes
+-c--traditional
+-C--copyright
+-d[file]--dump-variables[=file]
+-D[file]--debug[=file]
+-e 'program-text'--source='program-text'
+-E file--exec=file
+-g--gen-pot
+-h--help
+-i includefile--include=includefile
+-I--trace
+-l library--load=library
+-L[fatal|invalid|no-ext]--lint[=fatal|invalid|no-ext]
+-M--bignum
+-N--use-lc-numeric
+-n--non-decimal-data
+-o[file]--pretty-print[=file]
+-O--optimize
+-p[file]--profile[=file]
+-P--posix
+-r--re-interval
+-s--no-optimize
+-S--sandbox
+-t--lint-old
+-V--version
+
+To report bugs, use the `gawkbug' program.
+For full instructions, see the node `Bugs' in `gawk.info'
+which is section `Reporting Problems and Bugs' in the
+printed version.  This same information may be found at
+https://www.gnu.org/software/gawk/manual/html_node/Bugs.html.
+PLEASE do NOT try to report bugs by posting in comp.lang.awk,
+or by using a web forum such as Stack Overflow.
+
+gawk is a pattern scanning and processing language.
+By default it reads standard input and writes standard output.
+
+Examples:
+awk '{ sum += $1 }; END { print sum }' file
+awk -F: '{ print $1 }' /etc/passwd
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $3, $1, $4}' | awk -F sort -k1r| 
+awk: option requires an argument -- F
+Usage: awk [POSIX or GNU style options] -f progfile [--] file ...
+Usage: awk [POSIX or GNU style options] [--] 'program' file ...
+POSIX options:GNU long options: (standard)
+-f progfile--file=progfile
+-F fs--field-separator=fs
+-v var=val--assign=var=val
+Short options:GNU long options: (extensions)
+-b--characters-as-bytes
+-c--traditional
+-C--copyright
+-d[file]--dump-variables[=file]
+-D[file]--debug[=file]
+-e 'program-text'--source='program-text'
+-E file--exec=file
+-g--gen-pot
+-h--help
+-i includefile--include=includefile
+-I--trace
+-l library--load=library
+-L[fatal|invalid|no-ext]--lint[=fatal|invalid|no-ext]
+-M--bignum
+-N--use-lc-numeric
+-n--non-decimal-data
+-o[file]--pretty-print[=file]
+-O--optimize
+-p[file]--profile[=file]
+-P--posix
+-r--re-interval
+-s--no-optimize
+-S--sandbox
+-t--lint-old
+-V--version
+
+To report bugs, use the `gawkbug' program.
+For full instructions, see the node `Bugs' in `gawk.info'
+which is section `Reporting Problems and Bugs' in the
+printed version.  This same information may be found at
+https://www.gnu.org/software/gawk/manual/html_node/Bugs.html.
+PLEASE do NOT try to report bugs by posting in comp.lang.awk,
+or by using a web forum such as Stack Overflow.
+
+gawk is a pattern scanning and processing language.
+By default it reads standard input and writes standard output.
+
+Examples:
+awk '{ sum += $1 }; END { print sum }' file
+awk -F: '{ print $1 }' /etc/passwd
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $3, $1, $4}' | awk -F | sort -k1r "" " | sort- -k1r
+Usage: awk [POSIX or GNU style options] -f progfile [--] file ...
+Usage: awk [POSIX or GNU style options] [--] 'program' file ...
+POSIX options:GNU long options: (standard)
+-f progfile--file=progfile
+-F fs--field-separator=fs
+-v var=val--assign=var=val
+Short options:GNU long options: (extensions)
+-b--characters-as-bytes
+-c--traditional
+-C--copyright
+-d[file]--dump-variables[=file]
+-D[file]--debug[=file]
+-e 'program-text'--source='program-text'
+-E file--exec=file
+-g--gen-pot
+-h--help
+-i includefile--include=includefile
+-I--trace
+-l library--load=library
+-L[fatal|invalid|no-ext]--lint[=fatal|invalid|no-ext]
+-M--bignum
+-N--use-lc-numeric
+-n--non-decimal-data
+-o[file]--pretty-print[=file]
+-O--optimize
+-p[file]--profile[=file]
+-P--posix
+-r--re-interval
+-s--no-optimize
+-S--sandbox
+-t--lint-old
+-V--version
+
+To report bugs, use the `gawkbug' program.
+For full instructions, see the node `Bugs' in `gawk.info'
+which is section `Reporting Problems and Bugs' in the
+printed version.  This same information may be found at
+https://www.gnu.org/software/gawk/manual/html_node/Bugs.html.
+PLEASE do NOT try to report bugs by posting in comp.lang.awk,
+or by using a web forum such as Stack Overflow.
+
+gawk is a pattern scanning and processing language.
+By default it reads standard input and writes standard output.
+
+Examples:
+awk '{ sum += $1 }; END { print sum }' file
+awk -F: '{ print $1 }' /etc/passwd
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $3, $1, $4}' | awk -F " " | sort -k1r^C
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $3, $1, $4}' | awk -F " " | sort -k1rn
+Usage: awk [POSIX or GNU style options] -f progfile [--] file ...
+Usage: awk [POSIX or GNU style options] [--] 'program' file ...
+POSIX options:GNU long options: (standard)
+-f progfile--file=progfile
+-F fs--field-separator=fs
+-v var=val--assign=var=val
+Short options:GNU long options: (extensions)
+-b--characters-as-bytes
+-c--traditional
+-C--copyright
+-d[file]--dump-variables[=file]
+-D[file]--debug[=file]
+-e 'program-text'--source='program-text'
+-E file--exec=file
+-g--gen-pot
+-h--help
+-i includefile--include=includefile
+-I--trace
+-l library--load=library
+-L[fatal|invalid|no-ext]--lint[=fatal|invalid|no-ext]
+-M--bignum
+-N--use-lc-numeric
+-n--non-decimal-data
+-o[file]--pretty-print[=file]
+-O--optimize
+-p[file]--profile[=file]
+-P--posix
+-r--re-interval
+-s--no-optimize
+-S--sandbox
+-t--lint-old
+-V--version
+
+To report bugs, use the `gawkbug' program.
+For full instructions, see the node `Bugs' in `gawk.info'
+which is section `Reporting Problems and Bugs' in the
+printed version.  This same information may be found at
+https://www.gnu.org/software/gawk/manual/html_node/Bugs.html.
+PLEASE do NOT try to report bugs by posting in comp.lang.awk,
+or by using a web forum such as Stack Overflow.
+
+gawk is a pattern scanning and processing language.
+By default it reads standard input and writes standard output.
+
+Examples:
+awk '{ sum += $1 }; END { print sum }' file
+awk -F: '{ print $1 }' /etc/passwd
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $3, $1, $4}' | awk -F " " | sort -k1rnsort -k1rn
+65534 nobody 65534
+1002 user3 1002
+998 systemd-network 998
+997 systemd-timesync 997
+992 systemd-resolve 992
+991 polkitd 991
+989 fwupd-refresh 989
+109 sshd 65534
+108 usbmux 46
+107 landscape 109
+105 tcpdump 107
+104 uuidd 105
+103 syslog 104
+101 messagebus 102
+42 _apt 65534
+39 irc 39
+38 list 38
+34 backup 34
+33 www-data 33
+13 proxy 13
+10 uucp 10
+9 news 9
+8 mail 8
+7 lp 7
+6 man 12
+5 games 60
+3 sys 3
+2 bin 2
+1 daemon 1
+root@eltex-practice2-pg1-v13:~# tahead /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,tech
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+root@eltex-practice2-pg1-v13:~# head /etc/groupcat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $3, $1, $4}' | sort -k1rn | |awk  ./etc/passwd./etc/passwd /etc/passwd  /etc/group
+^C
+root@eltex-practice2-pg1-v13:~# awk -F: '/\/usr\/sbin\/nologin/ {print /etc/passwd $3,/etc/passwd  $1} /etc/passwd /etc/group' |sort -k1rn  int
+^C
+root@eltex-practice2-pg1-v13:~# awk -F: '/\/usr\/sbin\/nologin/ {print $3, $1} /etc/passwd ' |sort -k1rn cat /etc/passwd | 
+65534 nobody
+1002 user3
+998 systemd-network
+997 systemd-timesync
+992 systemd-resolve
+991 polkitd
+989 fwupd-refresh
+109 sshd
+108 usbmux
+107 landscape
+105 tcpdump
+104 uuidd
+103 syslog
+101 messagebus
+42 _apt
+39 irc
+38 list
+34 backup
+33 www-data
+13 proxy
+10 uucp
+9 news
+8 mail
+7 lp
+6 man
+5 games
+3 sys
+2 bin
+1 daemon
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $3, $1} ' |sort -k1rn /etc/passwd 
+065534 nobody
+01002 user3
+0998 systemd-network
+0997 systemd-timesync
+0992 systemd-resolve
+0991 polkitd
+0989 fwupd-refresh
+0109 sshd
+0108 usbmux
+0107 landscape
+0105 tcpdump
+0104 uuidd
+0103 syslog
+0101 messagebus
+042 _apt
+039 irc
+038 list
+034 backup
+033 www-data
+013 proxy
+010 uucp
+09 news
+08 mail
+07 lp
+06 man
+05 games
+03 sys
+02 bin
+01 daemon
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print /etc/passwd $3, $1} ' |sort -k1rn /et/passwd /etc/groupcgroup
+065534 0nobody
+01002 0user3
+0998 0systemd-network
+0997 0systemd-timesync
+0992 0systemd-resolve
+0991 0polkitd
+0989 0fwupd-refresh
+0109 0sshd
+0108 0usbmux
+0107 0landscape
+0105 0tcpdump
+0104 0uuidd
+0103 0syslog
+0101 0messagebus
+042 0_apt
+039 0irc
+038 0list
+034 0backup
+033 0www-data
+013 0proxy
+010 0uucp
+09 0news
+08 0mail
+07 0lp
+06 0man
+05 0games
+03 0sys
+02 0bin
+01 0daemon
+_apt:x:42:65534::/nonexistent:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+dhcpcd:x:100:65534:DHCP Client Daemon,,,:/usr/lib/dhcpcd:/bin/false
+fwupd-refresh:x:989:989:Firmware update daemon:/var/lib/fwupd:/usr/sbin/nologin
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+landscape:x:107:109::/var/lib/landscape:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+messagebus:x:101:102::/nonexistent:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+polkitd:x:991:991:User for polkitd:/:/usr/sbin/nologin
+pollinate:x:102:1::/var/cache/pollinate:/bin/false
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+root:x:0:0:root:/root:/bin/bash
+sshd:x:109:65534::/run/sshd:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+syslog:x:103:104::/nonexistent:/usr/sbin/nologin
+systemd-network:x:998:998:systemd Network Management:/:/usr/sbin/nologin
+systemd-resolve:x:992:992:systemd Resolver:/:/usr/sbin/nologin
+systemd-timesync:x:997:997:systemd Time Synchronization:/:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+tcpdump:x:105:107::/nonexistent:/usr/sbin/nologin
+tech:x:1000:1000:tech:/home/tech:/bin/bash
+tss:x:106:108:TPM software stack,,,:/var/lib/tpm:/bin/false
+usbmux:x:108:46:usbmux daemon,,,:/var/lib/usbmux:/usr/sbin/nologin
+user1:x:1004:1005::/home/user1:/bin/bash
+user2:x:1001:1001:,,,:/home/user2:/bin/bash
+user3:x:1002:1002:,,,:/home/user3:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+uuidd:x:104:105::/run/uuidd:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print /etc/passwd $3, /etc/group $1} /etc/group' |sort -k1rn $1} /etc/passwd /etc/group $1} /etc/groupcat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print /etc/passwd $3, /etc/group $1} /etc/group' |sort -k1rn passwd
+065534 0nobody
+01002 0user3
+0998 0systemd-network
+0997 0systemd-timesync
+0992 0systemd-resolve
+0991 0polkitd
+0989 0fwupd-refresh
+0109 0sshd
+0108 0usbmux
+0107 0landscape
+0105 0tcpdump
+0104 0uuidd
+0103 0syslog
+0101 0messagebus
+042 0_apt
+039 0irc
+038 0list
+034 0backup
+033 0www-data
+013 0proxy
+010 0uucp
+09 0news
+08 0mail
+07 0lp
+06 0man
+05 0games
+03 0sys
+02 0bin
+01 0daemon
+_apt:x:42:65534::/nonexistent:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+dhcpcd:x:100:65534:DHCP Client Daemon,,,:/usr/lib/dhcpcd:/bin/false
+fwupd-refresh:x:989:989:Firmware update daemon:/var/lib/fwupd:/usr/sbin/nologin
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+landscape:x:107:109::/var/lib/landscape:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+messagebus:x:101:102::/nonexistent:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+polkitd:x:991:991:User for polkitd:/:/usr/sbin/nologin
+pollinate:x:102:1::/var/cache/pollinate:/bin/false
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+root:x:0:0:root:/root:/bin/bash
+sshd:x:109:65534::/run/sshd:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+syslog:x:103:104::/nonexistent:/usr/sbin/nologin
+systemd-network:x:998:998:systemd Network Management:/:/usr/sbin/nologin
+systemd-resolve:x:992:992:systemd Resolver:/:/usr/sbin/nologin
+systemd-timesync:x:997:997:systemd Time Synchronization:/:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+tcpdump:x:105:107::/nonexistent:/usr/sbin/nologin
+tech:x:1000:1000:tech:/home/tech:/bin/bash
+tss:x:106:108:TPM software stack,,,:/var/lib/tpm:/bin/false
+usbmux:x:108:46:usbmux daemon,,,:/var/lib/usbmux:/usr/sbin/nologin
+user1:x:1004:1005::/home/user1:/bin/bash
+user2:x:1001:1001:,,,:/home/user2:/bin/bash
+user3:x:1002:1002:,,,:/home/user3:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+uuidd:x:104:105::/run/uuidd:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print /etc/passwd $3, /etc/passwd $1} /etc/group' |sort -k1rn 
+065534 0nobody
+01002 0user3
+0998 0systemd-network
+0997 0systemd-timesync
+0992 0systemd-resolve
+0991 0polkitd
+0989 0fwupd-refresh
+0109 0sshd
+0108 0usbmux
+0107 0landscape
+0105 0tcpdump
+0104 0uuidd
+0103 0syslog
+0101 0messagebus
+042 0_apt
+039 0irc
+038 0list
+034 0backup
+033 0www-data
+013 0proxy
+010 0uucp
+09 0news
+08 0mail
+07 0lp
+06 0man
+05 0games
+03 0sys
+02 0bin
+01 0daemon
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print /etc/passwd $3, /etc/passwd $1}' |sort -k1rn   
+65534 nobody
+1002 user3
+998 systemd-network
+997 systemd-timesync
+992 systemd-resolve
+991 polkitd
+989 fwupd-refresh
+109 sshd
+108 usbmux
+107 landscape
+105 tcpdump
+104 uuidd
+103 syslog
+101 messagebus
+42 _apt
+39 irc
+38 list
+34 backup
+33 www-data
+13 proxy
+10 uucp
+9 news
+8 mail
+7 lp
+6 man
+5 games
+3 sys
+2 bin
+1 daemon
+root@eltex-practice2-pg1-v13:~# ^C
+root@eltex-practice2-pg1-v13:~#  headded /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,tech
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+root@eltex-practice2-pg1-v13:~# head /etc/groupcat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $3, $1}' |sort -k1rn 
+1 daemon
+2 bin
+3 sys
+5 games
+6 man
+7 lp
+8 mail
+9 news
+10 uucp
+13 proxy
+33 www-data
+34 backup
+38 list
+39 irc
+42 _apt
+65534 nobody
+998 systemd-network
+997 systemd-timesync
+101 messagebus
+992 systemd-resolve
+991 polkitd
+103 syslog
+104 uuidd
+105 tcpdump
+107 landscape
+989 fwupd-refresh
+108 usbmux
+109 sshd
+1002 user3
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $3, $1}'$1}'$1}'$1}'1}'$1}'$1}'$1}'$1}'$1}'$1}'$1}'$1}'$1}'$1}'=$1}'$1}'$1}'$1}'$1}'$1}'u$1}'s$1}'e$1}'r$1}'=$1}' 'E'N'D' '{'}'a}'w}'k}' }'-}'F}':}' }'{}'}'p}}'r}}'i}}'n}}'t}}' }}'u}}'s}}'e}}'r}}' }}'}}',}}' }}'$}}'3}}',}}' }}'$}}'4}}' $4}}',$3 
+awk: cmd. line:1: /\/usr\/sbin\/nologin/ {user=$1} END {awk -F: {print $3, user, $4}}
+awk: cmd. line:1:                                             ^ syntax error
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {user=$1} END {awk -F: {print $3, user, $4}}' }'/}'e}'t}'c}'/}'g}'r}'o}'u}'p}'
+awk: cmd. line:1: /\/usr\/sbin\/nologin/ {user=$1} END {awk -F: {print $3, user, $4} /etc/group}
+awk: cmd. line:1:                                             ^ syntax error
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {user=$1} END {awk -F: {print $3, user, $4} /etc/group}'''
+awk: cmd. line:1: /\/usr\/sbin\/nologin/ {user=$1} END {awk -F: {print
+awk: cmd. line:1:                                             ^ syntax error
+root@eltex-practice2-pg1-v13:~# ^C
+root@eltex-practice2-pg1-v13:~# awk -F: '/\/usr\/sbin\/nologin/ {user=$1; system("awk -F: '\''$1 == " user " {print $3, " user ", $4}'\'' /etc/group")}' /etc/passwdawk -F: '/\/usr\/sbin\/nologin/ {user=$1; system("awk -F: '\''$1 == " user " {print $3, " user ", $4}'\'' /etc/group")}' /etc/passwd cat /ethead etc/passwd | 
+head: cannot open 'etc/passwd' for reading: No such file or directory
+root@eltex-practice2-pg1-v13:~# head etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {user=$1; system("awk -F: '\''$1 == " user " {print $3, " user ", $4}'\'' /etc/group")}'/
+root@eltex-practice2-pg1-v13:~# head /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {user=$1; system("awk -F: '\''$1 == " user " {print $3, " user ", $4}'\'' /etc/group")}'cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {user=$1} END {awk -F: '{print $3, user, $4} /etc/group}''head etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {user=$1; system("awk -F: '\''$1 == " user " {print $3, " user ", $4}'\'' /etc/group")}'/awk -F: '/\/usr\/sbin\/nologin/ {user=$1; system("awk -F: '\''$1 == " user " {print $3, " user ", $4}'\'' /etc/group")}' /etc/passwdawk -F: '/\/usr\/sbin\/nologin/ {user=$1; system("awk -F: '\''$1 == " user " {print $3, " user ", $4}'\'' /etc/group")}' /etc/passwd
+root@eltex-practice2-pg1-v13:~# awk -F: '/\/usr\/sbin\/nologin/ {user=$1; system("awk -F: '\''$1 == " user " {print $3, " user ", $4}'\'' /etc/group")}' /etc/passwdhead /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {user=$1; system("awk -F: '\''$1 == " user " {print $3, " user ", $4}'\'' /etc/group")}'cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {user=$1} END {awk -F: '{print $3, user, $4} /etc/group}''{print $3, user, $4} /etc/group}'}'print $3, $1}'^C
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $1}' | while read user; do
+    awk -F: -v u="$user" '$1 == u {print $3, u, $4}' /etc/group
+doneroot@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $1}' | while read user; do
+    awk -F: -v u="$user" '$1 == u {print $3, u, $4}' /etc/group
+done
+1 daemon 
+2 bin 
+3 sys 
+60 games 
+12 man 
+7 lp 
+8 mail 
+9 news 
+10 uucp 
+13 proxy 
+33 www-data 
+34 backup 
+38 list 
+39 irc 
+998 systemd-network 
+997 systemd-timesync 
+102 messagebus 
+992 systemd-resolve 
+991 polkitd 
+104 syslog 
+105 uuidd 
+107 tcpdump 
+109 landscape 
+989 fwupd-refresh 
+1002 user3 
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $1}' | while read user; do     awk -F: -v u="$user" '$1 == u {print $3, u, $4}' /etc/group; done
+1 daemon 
+2 bin 
+3 sys 
+60 games 
+12 man 
+7 lp 
+8 mail 
+9 news 
+10 uucp 
+13 proxy 
+33 www-data 
+34 backup 
+38 list 
+39 irc 
+998 systemd-network 
+997 systemd-timesync 
+102 messagebus 
+992 systemd-resolve 
+991 polkitd 
+104 syslog 
+105 uuidd 
+107 tcpdump 
+109 landscape 
+989 fwupd-refresh 
+1002 user3 
+root@eltex-practice2-pg1-v13:~# head /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,tech
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+root@eltex-practice2-pg1-v13:~# tail /etc/group
+tcpdump:x:107:
+tss:x:108:
+landscape:x:109:
+fwupd-refresh:x:989:
+tech:x:1000:
+group:x:1004:
+user1:x:1005:
+user2:x:1001:
+user3:x:1002:
+users:x:1006:user1,user2,user3
+root@eltex-practice2-pg1-v13:~# tail /etc/groupheadcat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $1}' | while read user; do     awk -F: -v u="$user" '$1 == u {print $3, u, $4}' /etc/group; done
+1 daemon 
+2 bin 
+3 sys 
+60 games 
+12 man 
+7 lp 
+8 mail 
+9 news 
+10 uucp 
+13 proxy 
+33 www-data 
+34 backup 
+38 list 
+39 irc 
+998 systemd-network 
+997 systemd-timesync 
+102 messagebus 
+992 systemd-resolve 
+991 polkitd 
+104 syslog 
+105 uuidd 
+107 tcpdump 
+109 landscape 
+989 fwupd-refresh 
+1002 user3 
+root@eltex-practice2-pg1-v13:~# cat /tetc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,tech
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:tech
+floppy:x:25:
+tape:x:26:
+sudo:x:27:tech
+audio:x:29:
+dip:x:30:tech
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:tech
+staff:x:50:
+games:x:60:
+nogroup:x:65534:
+systemd-journal:x:999:
+systemd-network:x:998:
+systemd-timesync:x:997:
+input:x:996:
+sgx:x:995:
+kvm:x:994:
+render:x:993:
+lxd:x:101:tech
+messagebus:x:102:
+systemd-resolve:x:992:
+_ssh:x:103:
+polkitd:x:991:
+crontab:x:990:
+syslog:x:104:
+uuidd:x:105:
+rdma:x:106:
+tcpdump:x:107:
+tss:x:108:
+landscape:x:109:
+fwupd-refresh:x:989:
+tech:x:1000:
+group:x:1004:
+user1:x:1005:
+user2:x:1001:
+user3:x:1002:
+users:x:1006:user1,user2,user3
+root@eltex-practice2-pg1-v13:~# cat /etc/grouppasswd | awk -F: '/\/usr\/sbin\/nologin/ {print $1}' | while read user; do     awk -F: -v u="$user" '$1 == u {print $3, u, $4}' /etc/group; done^C
+root@eltex-practice2-pg1-v13:~# cat /etc/groupcat /etc/grouppasswd | awk -F: '/\/usr\/sbin\/nologin/ {print $1}' | while read user; do     awk -F: -v u="$user" '$1 == u {print $3, u, $4}' /etc/group; done 3 ;1$13 -v u=$1 $1 == u ' {}printf $4
+> 
+> ^C
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: -v u=$1 '/\/usr\/sbin\/nologin/ {print $3 $1}' | while read user; do awk -F: '$1 == u {printf $4} /etc/group; done
+^C
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: -v u=$1 '/\/usr\/sbin\/nologin/ {print $3 $1}' | while read user; do awk -F: '$1 == u {printf $4} /etc/group; done
+group
+passwd | awk -F: -v u=$1 '/\/usr\/sbin\/nologin/ {print $3 $1}' | while read user; do awk -F: '$1 == u {printf $4} /etc/group; done
+
+cat /etc/passwd | awk -F: -v u=$1 '/\/usr\/sbin\/nologin/ {print $3 $1}' | while read user; do awk -F: '$1 == u {printf $4} /etc/group; done
+ --v  u=""$user:
+> ^C
+root@eltex-practice2-pg1-v13:~# ^C
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $3 $1}' | while read user; do awk -F: -v u="$user" '$1 == u {printf $4} /etc/group; done
+'
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $3 $1}' | while read user; do awk -F: -v u="$user" '$1 == u {printf $4}' /etc/group; done,,
+root@eltex-practice2-pg1-v13:~# cat /etc/passwd | awk -F: '/\/usr\/sbin\/nologin/ {print $3, $1}' | while read user; do awk -F: -v u="$user" '$1 == u {print $4}' /etc/group; done
+1 daemon
+2 bin
+3 sys
+5 games
+6 man
+7 lp
+8 mail
+9 news
+10 uucp
+13 proxy
+33 www-data
+34 backup
+38 list
+39 irc
+42 _apt
+65534 nobody
+998 systemd-network
+997 systemd-timesync
+101 messagebus
+992 systemd-resolve
+991 polkitd
+103 syslog
+104 uuidd
+105 tcpdump
+107 landscape
+989 fwupd-refresh
+108 usbmux
+109 sshd
+1002 user3
+root@eltex-practice2-pg1-v13:~# ^C
+root@eltex-practice2-pg1-v13:~# ^C
+root@eltex-practice2-pg1-v13:~# tail /etc/group
+tcpdump:x:107:
+tss:x:108:
+landscape:x:109:
+fwupd-refresh:x:989:
+tech:x:1000:
+group:x:1004:
+user1:x:1005:
+user2:x:1001:
+user3:x:1002:
+users:x:1006:user1,user2,user3
+root@eltex-practice2-pg1-v13:~# awk -F: '/\/usr\/sbin\/nologin/ {print $1}' /etc/passwd | while read user; do
+    awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group
+doneroot@eltex-practice2-pg1-v13:~# awk -F: '/\/usr\/sbin\/nologin/ {print $1}' /etc/passwd | while read user; do
+    awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group
+done
+adm
+users
+root@eltex-practice2-pg1-v13:~# awk -F: '/\/usr\/sbin\/nologin/ {print $1}' /etc/passwd | while read user; do     awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group; done3 $}' /etc/passwd | while read user; do     awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group; done root@eltex-practice2-pg1-v13:~# 1}' /etc/passwd | while read user; do     awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group; doneroot@eltex-practice2-pg1-v13:~#  }' /etc/passwd | while read user; do     awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group; doneroot@eltex-practice2-pg1-v13:~#  | while read user; do     awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group; doneroot@eltex-practice2-pg1-v13:~#  | while read user; do     awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group; done 
+/etc/pass | while read user; do     awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group; done root@eltex-practice2-pg1-v13:~# w | while read user; do     awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group; doneroot@eltex-practice2-pg1-v13:~# d | while read user; do     awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group; doneroot@eltex-practice2-pg1-v13:~# awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group; doneroot@eltex-practice2-pg1-v13:~# awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group; done 
+ 41
+root@eltex-practice2-pg1-v13:~# awk -F: '/\/usr\/sbin\/nologin/ {print $3 $1 }' /etc/passwd | while read user; do awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group; doned
+1daemon
+2bin
+3sys
+5games
+6man
+7lp
+8mail
+9news
+10uucp
+13proxy
+33www-data
+34backup
+38list
+39irc
+42_apt
+65534nobody
+998systemd-network
+997systemd-timesync
+101messagebus
+992systemd-resolve
+991polkitd
+103syslog
+104uuidd
+105tcpdump
+107landscape
+989fwupd-refresh
+108usbmux
+109sshd
+1002user3
+root@eltex-practice2-pg1-v13:~# cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,tech
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:tech
+floppy:x:25:
+tape:x:26:
+sudo:x:27:tech
+audio:x:29:
+dip:x:30:tech
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:tech
+staff:x:50:
+games:x:60:
+nogroup:x:65534:
+systemd-journal:x:999:
+systemd-network:x:998:
+systemd-timesync:x:997:
+input:x:996:
+sgx:x:995:
+kvm:x:994:
+render:x:993:
+lxd:x:101:tech
+messagebus:x:102:
+systemd-resolve:x:992:
+_ssh:x:103:
+polkitd:x:991:
+crontab:x:990:
+syslog:x:104:
+uuidd:x:105:
+rdma:x:106:
+tcpdump:x:107:
+tss:x:108:
+landscape:x:109:
+fwupd-refresh:x:989:
+tech:x:1000:
+group:x:1004:
+user1:x:1005:
+user2:x:1001:
+user3:x:1002:
+users:x:1006:user1,user2,user3
+root@eltex-practice2-pg1-v13:~# cat /etc/groupawk -F: '/\/usr\/sbin\/nologin/ {print $3 $1 }' /etc/passwd | while read user; do awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group; done,, }' /etc/passwd | while read user; do awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group; done root@eltex-practice2-pg1-v13:~# 
+awk: cmd. line:1: /\/usr\/sbin\/nologin/ {print $3, $1, }
+awk: cmd. line:1:                                       ^ syntax error
+root@eltex-practice2-pg1-v13:~# awk -F: '/\/usr\/sbin\/nologin/ {print $3, $1, }' /etc/passwd | while read user; do awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group; done 
+
+root@eltex-practice2-pg1-v13:~# awk -F: '/\/usr\/sbin\/nologin/ {print $1 ":" $3}' /etc/passwd | while IFS=: read user uid; do
+    groups=$(awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group | tr '\n' ' ')
+    echo "$user:$uid -> $groups"
+doneroot@eltex-practice2-pg1-v13:~# awk -F: '/\/usr\/sbin\/nologin/ {print $1 ":" $3}' /etc/passwd | while IFS=: read user uid; do
+    groups=$(awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group | tr '\n' ' ')
+    echo "$user:$uid -> $groups"
+done
+daemon:1 -> 
+bin:2 -> 
+sys:3 -> 
+games:5 -> 
+man:6 -> 
+lp:7 -> 
+mail:8 -> 
+news:9 -> 
+uucp:10 -> 
+proxy:13 -> 
+www-data:33 -> 
+backup:34 -> 
+list:38 -> 
+irc:39 -> 
+_apt:42 -> 
+nobody:65534 -> 
+systemd-network:998 -> 
+systemd-timesync:997 -> 
+messagebus:101 -> 
+systemd-resolve:992 -> 
+polkitd:991 -> 
+syslog:103 -> adm 
+uuidd:104 -> 
+tcpdump:105 -> 
+landscape:107 -> 
+fwupd-refresh:989 -> 
+usbmux:108 -> 
+sshd:109 -> 
+user3:1002 -> users 
+root@eltex-practice2-pg1-v13:~# awk -F: '/\/usr\/sbin\/nologin/ {print $1 ":" $3}' /etc/passwd | while IFS=: read user uid; do     groups=$(awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group | tr '\n' ' ');     echo "$user:$uid -> $groups"; done ":" $3}' /etc/passwd | while IFS=: read user uid; do     groups=$(awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {printroot@eltex-practice2-pg1-v13:~# 3 ":" $3}' /etc/passwd | while IFS=: read user uid; do     groups=$(awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {printroot@eltex-practice2-pg1-v13:~#  $3}' /etc/passwd | while IFS=: read user uid; do     groups=$(awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {printroot@eltex-practice2-pg1-v13:~#  $3}' /etc/passwd | while IFS=: read user uid; do     groups=$(awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print root@eltex-practice2-pg1-v13:~#  $3}' /etc/passwd | while IFS=: read user uid; do     groups=$(awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $root@eltex-practice2-pg1-v13:~# $3}' /etc/passwd | while IFS=: read user uid; do     groups=$(awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1root@eltex-practice2-pg1-v13:~# , $3}' /etc/passwd | while IFS=: read user uid; do     groups=$(awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1root@eltex-practice2-pg1-v13:~# }' /etc/passwd | while IFS=: read user uid; do     groups=$(awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1root@eltex-practice2-pg1-v13:~# 1}' /etc/passwd | while IFS=: read user uid; do     groups=$(awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1root@eltex-practice2-pg1-v13:~# 
+awk -F: '/\/usr\/sbin\/nologin/ {print $3, $1}' /etc/passwd | while IFS=: read user uid; do     groups=$(awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group | tr '\n' ' ');     echo "$user:$uid -> $groups"; done  
+1 daemon  
+2 bin  
+3 sys  
+5 games  
+6 man  
+7 lp  
+8 mail  
+9 news  
+10 uucp  
+13 proxy  
+33 www-data  
+34 backup  
+38 list  
+39 irc  
+42 _apt  
+65534 nobody  
+998 systemd-network  
+997 systemd-timesync  
+101 messagebus  
+992 systemd-resolve  
+991 polkitd  
+103 syslog  
+104 uuidd  
+105 tcpdump  
+107 landscape  
+989 fwupd-refresh  
+108 usbmux  
+109 sshd  
+1002 user3  
+root@eltex-practice2-pg1-v13:~# awk -F: '/\/usr\/sbin\/nologin/ {print $3, $1}' /etc/passwd | while IFS=: read user uid; do     groups=$(awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group | tr '\n' ' ');     echo "$user $uid $groups"; done1 ":" $3}' /etc/passwd | while IFS=: read user uid; do     groups=$(awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group | tr '\n' ' ');     echo "$user:$uid ->3, $1}' /etc/passwd | while IFS=: read user uid; do     groups=$(awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group | tr '\n' ' ');     echo "$user $uid1 ":" $3}' /etc/passwd | while IFS=: read user uid; do     groups=$(awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group | tr '\n' ' ');     echo "$user:$uid ->  
+daemon 1 
+bin 2 
+sys 3 
+games 5 
+man 6 
+lp 7 
+mail 8 
+news 9 
+uucp 10 
+proxy 13 
+www-data 33 
+backup 34 
+list 38 
+irc 39 
+_apt 42 
+nobody 65534 
+systemd-network 998 
+systemd-timesync 997 
+messagebus 101 
+systemd-resolve 992 
+polkitd 991 
+syslog 103 adm 
+uuidd 104 
+tcpdump 105 
+landscape 107 
+fwupd-refresh 989 
+usbmux 108 
+sshd 109 
+user3 1002 users 
+root@eltex-practice2-pg1-v13:~# awk -F: '/\/usr\/sbin\/nologin/ {print $1 ":" $3}' /etc/passwd | while IFS=: read user uid; do     groups=$(awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group | tr '\n' ' ');     echo "$user $uid $groups"; done     $username | 
+1  
+2  
+3  
+5  
+6  
+7  
+8  
+9  
+10  
+13  
+33  
+34  
+38  
+39  
+42  
+65534  
+998  
+997  
+101  
+992  
+991  
+103  adm 
+104  
+105  
+107  
+989  
+108  
+109  
+1002  users 
+root@eltex-practice2-pg1-v13:~# awk -F: '/\/usr\/sbin\/nologin/ {print $1 ":" $3}' /etc/passwd | while IFS=: read user uid; do     groups=$(awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group | tr '\n' ' ');     echo "$uid $username $groups"; doneser $uidid $username
+1 daemon 
+2 bin 
+3 sys 
+5 games 
+6 man 
+7 lp 
+8 mail 
+9 news 
+10 uucp 
+13 proxy 
+33 www-data 
+34 backup 
+38 list 
+39 irc 
+42 _apt 
+65534 nobody 
+998 systemd-network 
+997 systemd-timesync 
+101 messagebus 
+992 systemd-resolve 
+991 polkitd 
+103 syslog adm 
+104 uuidd 
+105 tcpdump 
+107 landscape 
+989 fwupd-refresh 
+108 usbmux 
+109 sshd 
+1002 user3 users 
+root@eltex-practice2-pg1-v13:~# awk -F: '/\/usr\/sbin\/nologin/ {print $1 ":" $3}' /etc/passwd | while IFS=: read user uid; do     groups=$(awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group | tr '\n' ' ');     echo "$uid $user $groups"; done,,
+1, daemon, 
+2, bin, 
+3, sys, 
+5, games, 
+6, man, 
+7, lp, 
+8, mail, 
+9, news, 
+10, uucp, 
+13, proxy, 
+33, www-data, 
+34, backup, 
+38, list, 
+39, irc, 
+42, _apt, 
+65534, nobody, 
+998, systemd-network, 
+997, systemd-timesync, 
+101, messagebus, 
+992, systemd-resolve, 
+991, polkitd, 
+103, syslog, adm 
+104, uuidd, 
+105, tcpdump, 
+107, landscape, 
+989, fwupd-refresh, 
+108, usbmux, 
+109, sshd, 
+1002, user3, users 
+root@eltex-practice2-pg1-v13:~# awk -F: '/\/usr\/sbin\/nologin/ {print $1 ":" $3}' /etc/passwd | while IFS=: read user uid; do     groups=$(awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group | tr '\n' ' ');     echo "$uid, $user, $groups"; done | sort -k1n
+1, daemon, 
+2, bin, 
+3, sys, 
+5, games, 
+6, man, 
+7, lp, 
+8, mail, 
+9, news, 
+10, uucp, 
+13, proxy, 
+33, www-data, 
+34, backup, 
+38, list, 
+39, irc, 
+42, _apt, 
+101, messagebus, 
+103, syslog, adm 
+104, uuidd, 
+105, tcpdump, 
+107, landscape, 
+108, usbmux, 
+109, sshd, 
+989, fwupd-refresh, 
+991, polkitd, 
+992, systemd-resolve, 
+997, systemd-timesync, 
+998, systemd-network, 
+1002, user3, users 
+65534, nobody, 
+root@eltex-practice2-pg1-v13:~# awk -F: '/\/usr\/sbin\/nologin/ {print $1 ":" $3}' /etc/passwd | while IFS=: read user uid; do     groups=$(awk -F: -v u="$user" '$4 ~ "(^|,)" u "(,|$)" {print $1}' /etc/group | tr '\n' ' ');     echo "$uid, $user, $groups"; done | sort -k1nr
+65534, nobody, 
+1002, user3, users 
+998, systemd-network, 
+997, systemd-timesync, 
+992, systemd-resolve, 
+991, polkitd, 
+989, fwupd-refresh, 
+109, sshd, 
+108, usbmux, 
+107, landscape, 
+105, tcpdump, 
+104, uuidd, 
+103, syslog, adm 
+101, messagebus, 
+42, _apt, 
+39, irc, 
+38, list, 
+34, backup, 
+33, www-data, 
+13, proxy, 
+10, uucp, 
+9, news, 
+8, mail, 
+7, lp, 
+6, man, 
+5, games, 
+3, sys, 
+2, bin, 
+1, daemon, 
+root@eltex-practice2-pg1-v13:~# dawk dmesgawk ''k'e'r'n'e'l'  grep ''k'e'r'n'e'l' dmesg | 
+[    0.034334] Booting paravirtualized kernel on KVM
+[    0.077826] Memory: 3926060K/4193760K available (22528K kernel code, 4438K rwdata, 14412K rodata, 4924K init, 4788K bss, 267440K reserved, 0K cma-reserved)
+[    0.876914] Loaded X.509 cert 'Build time autogenerated kernel key: 05121a06f1594ef7d7e475e00608841dc108b5e8'
+[    1.126471] Loaded X.509 cert 'Build time autogenerated kernel key: 05121a06f1594ef7d7e475e00608841dc108b5e8'
+[    1.183648] Freeing unused kernel image (initmem) memory: 4924K
+[    1.185575] Write protecting the kernel read-only data: 38912k
+[    1.189028] Freeing unused kernel image (rodata/data gap) memory: 1972K
+[    4.794163] systemd[1]: Listening on systemd-udevd-kernel.socket - udev Kernel Socket.
+[    4.859683] systemd[1]: Mounting sys-kernel-debug.mount - Kernel Debug File System...
+[    4.882830] systemd[1]: Mounting sys-kernel-tracing.mount - Kernel Trace File System...
+root@eltex-practice2-pg1-v13:~#  -wc -l /var/log/kern.log
+22 /var/log/kern.log
+root@eltex-practice2-pg1-v13:~# tail head /var/log/apt/history.log
+
+Start-Date: 2026-05-02  06:12:11
+Commandline: /usr/bin/unattended-upgrade
+Upgrade: kmod:amd64 (31+20240202-2ubuntu7.1, 31+20240202-2ubuntu7.2), libkmod2:amd64 (31+20240202-2ubuntu7.1, 31+20240202-2ubuntu7.2)
+End-Date: 2026-05-02  06:12:28
+
+Start-Date: 2026-05-02  11:54:09
+Commandline: apt-get install p7zip-full
+Install: p7zip-full:amd64 (16.02+transitional.1), 7zip:amd64 (23.01+dfsg-11, automatic)
+End-Date: 2026-05-02  11:54:10
+root@eltex-practice2-pg1-v13:~# head /var/log/apt/history.log-/var/log/apt/history.logn/var/log/apt/history.log /var/log/apt/history.log3/var/log/apt/history.log0/var/log/apt/history.log /var/log/apt/history.log
+
+Start-Date: 2026-05-02  06:12:11
+Commandline: /usr/bin/unattended-upgrade
+Upgrade: kmod:amd64 (31+20240202-2ubuntu7.1, 31+20240202-2ubuntu7.2), libkmod2:amd64 (31+20240202-2ubuntu7.1, 31+20240202-2ubuntu7.2)
+End-Date: 2026-05-02  06:12:28
+
+Start-Date: 2026-05-02  11:54:09
+Commandline: apt-get install p7zip-full
+Install: p7zip-full:amd64 (16.02+transitional.1), 7zip:amd64 (23.01+dfsg-11, automatic)
+End-Date: 2026-05-02  11:54:10
+
+Start-Date: 2026-05-02  12:01:29
+Commandline: apt-get install bzip2
+Install: bzip2:amd64 (1.0.8-5.1build0.1)
+End-Date: 2026-05-02  12:01:31
+root@eltex-practice2-pg1-v13:~# head -n 30 /var/log/apt/history.logawk '' awk '/^Commandline:/ {cmd=$0} /^Start-Date:/ {start=$0} /^End-Date:/ {print cmd " ; " start " ; " $0}' /var/log/apt/history.logawk '/^Commandline:/ {cmd=$0} /^Start-Date:/ {start=$0} /^End-Date:/ {print cmd " ; " start " ; " $0}' /var/log/apt/history.log
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-05-02  06:12:11 ; End-Date: 2026-05-02  06:12:28
+Commandline: apt-get install p7zip-full ; Start-Date: 2026-05-02  11:54:09 ; End-Date: 2026-05-02  11:54:10
+Commandline: apt-get install bzip2 ; Start-Date: 2026-05-02  12:01:29 ; End-Date: 2026-05-02  12:01:31
+root@eltex-practice2-pg1-v13:~# wc -l /var/log/apt/history.log
+15 /var/log/apt/history.log
+root@eltex-practice2-pg1-v13:~# cat /var/log/apt/history.log
+
+Start-Date: 2026-05-02  06:12:11
+Commandline: /usr/bin/unattended-upgrade
+Upgrade: kmod:amd64 (31+20240202-2ubuntu7.1, 31+20240202-2ubuntu7.2), libkmod2:amd64 (31+20240202-2ubuntu7.1, 31+20240202-2ubuntu7.2)
+End-Date: 2026-05-02  06:12:28
+
+Start-Date: 2026-05-02  11:54:09
+Commandline: apt-get install p7zip-full
+Install: p7zip-full:amd64 (16.02+transitional.1), 7zip:amd64 (23.01+dfsg-11, automatic)
+End-Date: 2026-05-02  11:54:10
+
+Start-Date: 2026-05-02  12:01:29
+Commandline: apt-get install bzip2
+Install: bzip2:amd64 (1.0.8-5.1build0.1)
+End-Date: 2026-05-02  12:01:31
+root@eltex-practice2-pg1-v13:~# cat /var/log/apt/history.logwc -lawk '/^Commandline:/ {cmd=$0} /^Start-Date:/ {start=$0} /^End-Date:/ {print cmd " ; " start " ; " $0}'
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-05-02  06:12:11 ; End-Date: 2026-05-02  06:12:28
+Commandline: apt-get install p7zip-full ; Start-Date: 2026-05-02  11:54:09 ; End-Date: 2026-05-02  11:54:10
+Commandline: apt-get install bzip2 ; Start-Date: 2026-05-02  12:01:29 ; End-Date: 2026-05-02  12:01:31
+root@eltex-practice2-pg1-v13:~# pwd
+/root
+root@eltex-practice2-pg1-v13:~# ls
+comp_test  etc_backup  etc_backup_7zip  etc_backup_gzip  etc_backup.tar  etc_backup.tar.bz2  etc_backup.tar.gz  etc_bacup.7z
+root@eltex-practice2-pg1-v13:~# logout
+
